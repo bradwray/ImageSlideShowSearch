@@ -1,2 +1,0 @@
-# ImageSlideShowSearch
-Created with CodeSandbox
