@@ -66,107 +66,13 @@ class App extends Component {
     fulScreen: false
   };
 
-  componentDidMount = () => {
-    // document.onkeydown = e => {
-    //   console.log(e.key);
-    //   if (e.key === " ") {
-    //     this.toMenu();
-    //   }
-    //   if (e.key === "a") {
-    //     this.keyChange("Alligator");
-    //   }
-    //   if (e.key === "b") {
-    //     this.keyChange("Bull");
-    //   }
-    //   if (e.key === "c") {
-    //     this.keyChange("Camel");
-    //   }
-    //   if (e.key === "d") {
-    //     this.keyChange("Duck");
-    //   }
-    //   if (e.key === "e") {
-    //     this.keyChange("Elephant");
-    //   }
-    //   if (e.key === "f") {
-    //     this.keyChange("Frog");
-    //   }
-    //   if (e.key === "g") {
-    //     this.keyChange("Giraffe");
-    //   }
-    //   if (e.key === "h") {
-    //     this.keyChange("Horse");
-    //   }
-    //   if (e.key === "i") {
-    //     this.keyChange("Iguana");
-    //   }
-    //   if (e.key === "j") {
-    //     this.keyChange("Jaguar");
-    //   }
-    //   if (e.key === "k") {
-    //     this.keyChange("Koala");
-    //   }
-    //   if (e.key === "l") {
-    //     this.keyChange("Lion");
-    //   }
-    //   if (e.key === "m") {
-    //     this.keyChange("Monkey");
-    //   }
-    //   if (e.key === "n") {
-    //     this.keyChange("Newt");
-    //   }
-    //   if (e.key === "o") {
-    //     this.keyChange("Owl");
-    //   }
-    //   if (e.key === "p") {
-    //     this.keyChange("Pig");
-    //   }
-    //   if (e.key === "q") {
-    //     this.keyChange("Quail");
-    //   }
-    //   if (e.key === "r") {
-    //     this.keyChange("Rabbit");
-    //   }
-    //   if (e.key === "s") {
-    //     this.keyChange("Snake");
-    //   }
-    //   if (e.key === "t") {
-    //     this.keyChange("Turtle");
-    //   }
-    //   if (e.key === "u") {
-    //     this.keyChange("Unicorn");
-    //   }
-    //   if (e.key === "v") {
-    //     this.keyChange("Vulture");
-    //   }
-    //   if (e.key === "w") {
-    //     this.keyChange("Wolf");
-    //   }
-    //   if (e.key === "x") {
-    //     this.keyChange("Xylophone");
-    //   }
-    //   if (e.key === "y") {
-    //     this.keyChange("Yak");
-    //   }
-    //   if (e.key === "z") {
-    //     this.keyChange("Zebra");
-    //   }
-    // };
-  };
-
-  toMenu = () => {
-    this.setState({
-      images: [],
-      name: "Pick a letter."
-    });
-  };
-
   toggleFull = () => {
     this.setState({
       fullScreen: !this.state.fullScreen
     });
   };
 
-  keyChange = val => {
+  handleChange = val => {
     axios
       .get(
         `${this.state.apiUrl}/?key=${
@@ -204,7 +110,7 @@ class App extends Component {
           <div className={classes.name}>
             <input
               placeholder="Enter your search..."
-              onChange={e => this.keyChange(e.target.value)}
+              onChange={e => this.handleChange(e.target.value)}
             />
           </div>
           <Slides images={this.state.images} />
