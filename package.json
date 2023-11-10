@@ -7,7 +7,7 @@
   "dependencies": {
     "@material-ui/core": "4.8.3",
     "@material-ui/icons": "4.5.1",
-    "axios": "0.19.2",
+    "axios": "1.6.0",
     "canvas": "2.6.1",
     "fast-average-color": "6.0.1",
     "material-ui": "0.20.2",
